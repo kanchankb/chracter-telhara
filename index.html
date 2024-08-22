@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            form {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            form {
+                padding: 10px;
+                box-shadow: none;
+            }
+
+            button {
+                padding: 12px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<form action="https://script.google.com/macros/s/AKfycbxLVX3x8Bx9J1OeO2Cu-Ohg4ccppEhH6Pz-V8fhXAEIBmWd_bP_rxQ8GoF6Ri8ScsyS/exec" method="POST">
+    <h1>औरंगाबाद ग्रामीण</h1>
+    <h2>चारित्र्य आणि पार्श्वभूमी पडताळणीसाठी अर्ज सह वैयक्तिक तपशील फॉर्म</h2>
+    <div class="form-group">
+        <label for="applicant-name"><strong>अर्जदाराचे नाव:</strong></label>
+        <input type="text" id="applicant-name" name="applicant-name" required>
+    </div>
+    <div class="form-group">
+        <label for="id-name"><strong>ओळखपत्राचे नाव:</strong></label>
+        <input type="text" id="id-name" name="id-name" required>
+    </div>
+    <div class="form-group">
+        <label for="id-no"><strong>ओळखपत्र क्रमांक:</strong></label>
+        <input type="text" id="id-no" name="id-no" required>
+    </div>
+    <div class="form-group">
+        <label for="aadhar-no"><strong>आधार कार्ड क्रमांक:</strong></label>
+        <input type="text" id="aadhar-no" name="aadhar-no" required>
+    </div>
+    <div class="form-group">
+        <label for="mobile-no"><strong>मोबाइल क्रमांक:</strong></label>
+        <input type="text" id="mobile-no" name="mobile-no" required>
+    </div>
+    <div class="form-group">
+        <label for="email-id"><strong>ईमेल आयडी:</strong></label>
+        <input type="email" id="email-id" name="email-id" required>
+    </div>
+    <div class="form-group">
+        <label for="present-address"><strong>सध्याचा रहिवासी पत्ता:</strong></label>
+        <textarea id="present-address" name="present-address" rows="3" required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="permanent-address"><strong>स्थायी पत्ता:</strong></label>
+        <textarea id="permanent-address" name="permanent-address" rows="3" required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="designation"><strong>पदनाम:</strong></label>
+        <input type="text" id="designation" name="designation" required>
+    </div>
+    <div class="form-group">
+        <label for="company"><strong>कंपनी:</strong></label>
+        <input type="text" id="company" name="company" required>
+    </div>
+    <div class="form-group">
+        <label for="company-address"><strong>कंपनीचा पत्ता:</strong></label>
+        <textarea id="company-address" name="company-address" rows="3" required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="address-1"><strong>पत्ता:</strong></label>
+        <input type="text" id="address-1" name="address-1" required>
+    </div>
+    <div class="form-group">
+        <label for="from-1"><strong>पासून:</strong></label>
+        <input type="text" id="from-1" name="from-1" required>
+    </div>
+    <div class="form-group">
+        <label for="to-1"><strong>पर्यंत:</strong></label>
+        <input type="text" id="to-1" name="to-1" required>
+    </div>
+    <div class="form-group">
+        <label for="pincode-1"><strong>पिनकोड:</strong></label>
+        <input type="text" id="pincode-1" name="pincode-1" required>
+    </div>
+    <div class="form-group">
+        <label for="joining-date"><strong>जॉइनिंग तारीख:</strong></label>
+        <input type="date" id="joining-date" name="joining-date" required>
+    </div>
+    <div class="form-group">
+        <label for="identification-mark"><strong>दृश्यमान ओळख चिन्ह:</strong></label>
+        <input type="text" id="identification-mark" name="identification-mark" required>
+    </div>
+    <div class="form-group">
+        <label for="arrested"><strong>आपण कधी अटक / खटला केला आहे का?</strong></label>
+        <select id="arrested" name="arrested" required>
+            <option value="no">नाही</option>
+            <option value="yes">होय</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="politics"><strong>आपण कधी राजकारणात सक्रिय होता का?</strong></label>
+        <select id="politics" name="politics" required>
+            <option value="no">नाही</option>
+            <option value="yes">होय</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="criminal-offense"><strong>आपल्याविरूद्ध कोणता गुन्हा नोंद आहे का?</strong></label>
+        <select id="criminal-offense" name="criminal-offense" required>
+            <option value="no">नाही</option>
+            <option value="yes">होय</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="reference-1"><strong>संदर्भ १:</strong></label>
+        <textarea id="reference-1" name="reference-1" rows="3" required></textarea>
+        <label for="reference-mobile-1"><strong>संदर्भ मोबाइल क्रमांक १:</strong></label>
+        <input type="text" id="reference-mobile-1" name="reference-mobile-1" required>
+    </div>
+    <div class="form-group">
+        <label for="reference-2"><strong>संदर्भ २:</strong></label>
+        <textarea id="reference-2" name="reference-2" rows="3" required></textarea>
+        <label for="reference-mobile-2"><strong>संदर्भ मोबाइल क्रमांक २:</strong></label>
+        <input type="text" id="reference-mobile-2" name="reference-mobile-2" required>
+    </div>
+    <div class="form-group">
+        <label for="place"><strong>ठिकाण:</strong></label>
+        <input type="text" id="place" name="place" required>
+        <label for="date"><strong>तारीख:</strong></label>
+        <input type="date" id="date" name="date" required>
+    </div>
+    <p>
+        मी प्रामाणिकपणे सांगतो की मी वर दिलेली माहिती खरी आणि योग्य आहे.    </p>
+    <div class="form-group">
+        <button type="submit">सबमिट करा</button>
+    </div>
+</form>
+
+<!-- <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzNJ8g4eavga2vCHVCbeG4Tcr8sUsbZlr_PQ-6-20aIJQJX7rbIefEpMyZw8FrLa3Vn5A/exec'; // Replace with your Google Apps Script web app URL
+        const form = document.getElementById('Sheet1');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const formData = new FormData(form);
+
+            fetch(scriptURL, {
+                    method: 'POST',
+                    body: new URLSearchParams(formData)
+                })
+                
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'Success') {
+                        alert('फॉर्म यशस्वीपणे सबमिट केला गेला आहे.');
+                        window.location.href = 'diplay.html'; // Redirect to the form.html page after successful form submission
+                    } else {
+                        alert('फॉर्म सबमिट करण्यात त्रुटी: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    alert('फॉर्म सबमिट करण्यात त्रुटी: ' + error.message);
+                });
+        });
+</script> -->
+
+</body>
+</html>

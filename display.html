@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .form-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        .photo {
+            width: 100px;
+            height: 130px;
+            border: 1px solid #ccc;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+        .section-title {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .address-section {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .address-section textarea {
+            width: 100%;
+            resize: none;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        #sign-off {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        #sign-off strong {
+            display: inline-block;
+            margin-right: 5px;
+        }
+        #sign-off span {
+            display: inline-block;
+            margin-left: auto;
+        }
+        @media (max-width: 600px) {
+            .form-container {
+                padding: 10px;
+            }
+            th, td {
+                padding: 4px;
+            }
+        }
+    </style>
+</head>
+<body onload="loadData()">
+
+<div class="form-container" id="form-container">
+    <h1 id="form-title-1">औरंगाबाद ग्रामीण</h1>
+    <h2 id="form-title-2">चारित्र्य आणि पार्श्वभूमी पडताळणीसाठी अर्ज सह वैयक्तिक तपशील फॉर्म</h2>
+    
+    <form id="application-form">
+        <table id="applicant-info">
+            <tr>
+                <td colspan="2">
+                    <strong>अर्जदाराचे नाव:</strong>
+                    <span id="applicant-name"></span>
+                </td>
+                <td rowspan="4" style="text-align: center;">
+                    <img id="applicant-photo" class="photo">
+                </td>
+            </tr>
+            <tr>
+                <td><strong>ओळखपत्राचे नाव:</strong>
+                    <span id="id-name"></span>
+                </td>
+                <td><strong>ओळखपत्र क्रमांक:</strong>
+                    <span id="id-no"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>आधार कार्ड क्रमांक:</strong>
+                    <span id="aadhar-no"></span>
+                </td>
+                <td><strong>मोबाइल क्रमांक:</strong>
+                    <span id="mobile-no"></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><strong>ईमेल आयडी:</strong>
+                    <span id="email-id"></span>
+                </td>
+            </tr>
+        </table>
+        
+        <div class="address-section">
+            <h3 class="section-title">सध्याचा रहिवासी पत्ता</h3>
+            <p id="present-address"></p>
+        </div>
+        <div class="address-section">
+            <h3 class="section-title">स्थायी पत्ता</h3>
+            <p id="permanent-address"></p>
+        </div>
+        
+        <table id="company-info">
+            <tr class="section-title">
+                <td colspan="2">कोठे एनओसी / प्रमाणपत्र सादर केले आहे त्याचे कंपनी नाव आणि पत्ता</td>
+            </tr>
+            <tr>
+                <td><strong>पदनाम:</strong>
+                    <span id="designation"></span>
+                </td>
+                <td><strong>कंपनी:</strong>
+                    <span id="company"></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <strong>पत्ता:</strong>
+                    <p id="company-address"></p>
+                </td>
+            </tr>
+        </table>
+        
+        <table id="residence-info">
+            <tr class="section-title">
+                <td colspan="5">मागील 10 वर्षांत अर्जदाराने राहत असलेल्या ठिकाणांचा तपशील</td>
+            </tr>
+            <tr>
+                <th>अनुक्रमांक</th>
+                <th>पत्ता</th>
+                <th>पासून</th>
+                <th>पर्यंत</th>
+                <th>पिनकोड</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><span id="address1"></span></td>
+                <td><span id="from1"></span></td>
+                <td><span id="to1"></span></td>
+                <td><span id="pincode1"></span></td>
+            </tr>
+        </table>
+
+        <table id="occupation-info">
+            <tr class="section-title">
+                <td colspan="2">सध्याचा व्यवसाय / सेवा (जॉइनिंग तारीख, पद, कार्यालयाचा पत्ता आणि दूरध्वनी क्रमांक)</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <strong>तारीख:</strong>
+                    <span id="joining-date"></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <strong>दृश्यमान ओळख चिन्ह:</strong>
+                    <span id="identification-mark"></span>
+                </td>
+            </tr>
+            <tr class="section-title">
+                <td colspan="2">कायदेशीर आणि गुन्हेगारी नोंद</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <strong>आपण कधी अटक / खटला केला आहे का?</strong>
+                    <span id="arrested"></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <strong>आपण कधी राजकारणात सक्रिय होता का?</strong>
+                    <span id="politics"></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <strong>आपल्याविरूद्ध कोणता गुन्हा नोंद आहे का?</strong>
+                    <span id="criminal-offence"></span>
+                </td>
+            </tr>
+        </table>
+
+        <table id="references">
+            <tr class="section-title">
+                <td colspan="2">संदर्भ</td>
+            </tr>
+            <tr>
+                <td>तुमच्या परिसरातील दोन व्यक्तींचे नाव, पत्ता आणि सही जे तुम्हाला ओळखतात</td>
+                <td>मोबाइल क्रमांक</td>
+            </tr>
+            <tr>
+                <td>
+                    <p id="reference1"></p>
+                </td>
+                <td><span id="reference-mobile1"></span></td>
+            </tr>
+            <tr>
+                <td>
+                    <p id="reference2"></p>
+                </td>
+                <td><span id="reference-mobile2"></span></td>
+            </tr>
+        </table>
+
+        <p id="declaration">  मी प्रामाणिकपणे सांगतो की मी वर दिलेली माहिती खरी आणि योग्य आहे.</p>
+
+        <div id="sign-off">
+            <div>
+                <strong>ठिकाण:</strong> <span id="place"></span><br>
+                <strong>तारीख:</strong> <span id="date"></span><br>
+                <strong>स्वाक्षरी:</strong> <span id="signature"></span>
+            </div>
+        </div>
+     
+    </form>
+</div>
+<script>
+    function loadData() {
+        const urlParams = new URLSearchParams(window.location.search);
+
+        document.getElementById('applicant-name').textContent = urlParams.get('applicant-name') || '';
+        document.getElementById('id-name').textContent = urlParams.get('id-name') || '';
+        document.getElementById('id-no').textContent = urlParams.get('id-no') || '';
+        document.getElementById('aadhar-no').textContent = urlParams.get('aadhar-no') || '';
+        document.getElementById('mobile-no').textContent = urlParams.get('mobile-no') || '';
+        document.getElementById('email-id').textContent = urlParams.get('email-id') || '';
+        document.getElementById('present-address').textContent = urlParams.get('present-address') || '';
+        document.getElementById('permanent-address').textContent = urlParams.get('permanent-address') || '';
+        document.getElementById('designation').textContent = urlParams.get('designation') || '';
+        document.getElementById('company').textContent = urlParams.get('company') || '';
+        document.getElementById('company-address').textContent = urlParams.get('company-address') || '';
+        document.getElementById('address1').textContent = urlParams.get('address1') || '';
+        document.getElementById('from1').textContent = urlParams.get('from1') || '';
+        document.getElementById('to1').textContent = urlParams.get('to1') || '';
+        document.getElementById('pincode1').textContent = urlParams.get('pincode1') || '';
+        document.getElementById('joining-date').textContent = urlParams.get('joining-date') || '';
+        document.getElementById('identification-mark').textContent = urlParams.get('identification-mark') || '';
+        document.getElementById('arrested').textContent = urlParams.get('arrested') || '';
+        document.getElementById('politics').textContent = urlParams.get('politics') || '';
+        document.getElementById('criminal-offence').textContent = urlParams.get('criminal-offence') || '';
+        document.getElementById('reference1').textContent = urlParams.get('reference1') || '';
+        document.getElementById('reference-mobile1').textContent = urlParams.get('reference-mobile1') || '';
+        document.getElementById('reference2').textContent = urlParams.get('reference2') || '';
+        document.getElementById('reference-mobile2').textContent = urlParams.get('reference-mobile2') || '';
+        document.getElementById('place').textContent = urlParams.get('place') || '';
+        document.getElementById('date').textContent = urlParams.get('date') || '';
+        document.getElementById('signature').textContent = urlParams.get('signature') || '';
+    }
+</script>
+</body>
+</html>
